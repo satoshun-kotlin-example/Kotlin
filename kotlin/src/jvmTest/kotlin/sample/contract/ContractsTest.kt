@@ -14,3 +14,4 @@ class ContractsTest {
     a.isNullOrEmpty()
   }
 }
+
