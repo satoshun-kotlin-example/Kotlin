@@ -8,8 +8,11 @@ class NothingTest {
   @Test
   fun nothing() {
     println(Nothing::class.java)
+    println(Unit::class.java)
 
     val variable = null
+
+    IllegalStateException()
 
     c = n()
     hoge(c)

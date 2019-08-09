@@ -24,5 +24,7 @@ class UnitTest {
     }
 
     val t2 = T2()
+
+    val abc: String = ""
   }
 }
