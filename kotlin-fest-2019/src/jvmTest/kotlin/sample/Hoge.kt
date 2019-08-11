@@ -1,3 +1,3 @@
 package sample
 
-class Hoge
+object Hoge
