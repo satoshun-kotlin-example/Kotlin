@@ -21,9 +21,14 @@ class NothingTest {
     }
     println(name.length) // Success
 
-    TODO()
+    val a : Any? = hoge()
+    if (a == null) {
+      NullShow.show(a)
+    }
   }
 }
+
+fun hoge() : String = ""
 
 object User
 
@@ -39,4 +44,15 @@ fun User.fail() {
 
 fun User.fail2(): Nothing {
   throw RuntimeException()
+}
+
+// copy from kotlintest
+interface Show<in A> {
+  fun show(a: A): String
+  fun supports(a: Any?): Boolean
+}
+
+object NullShow : Show<Nothing?> {
+  override fun supports(a: Any?): Boolean = a == null
+  override fun show(a: Nothing?): String = "<null>"
 }
