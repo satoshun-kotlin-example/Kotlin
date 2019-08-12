@@ -24,9 +24,9 @@ fun demo(strs: Source<String>) {
 // in modifier
 // contravariant
 
-interface Comparable<in T> {
-  operator fun compareTo(other: T): Int
-}
+//interface Comparable<in T> {
+//  operator fun compareTo(other: T): Int
+//}
 
 fun demo(x: Comparable<Number>) {
   x.compareTo(1.0)
