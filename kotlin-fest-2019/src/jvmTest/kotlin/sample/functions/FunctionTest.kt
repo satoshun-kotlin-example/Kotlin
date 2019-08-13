@@ -7,8 +7,11 @@ class FunctionTest {
   fun test() {
     hoge { a -> a.toString() }
 
-    val h3: (Int, String) -> String = ::hoge3
-    h3(10, "")
+    val a: (Int, Int) -> Int = ::add
+    a(10, 20)
+
+    val curried = a.curried()
+    curried(10)(20)
   }
 }
 
@@ -20,8 +23,8 @@ private fun hoge2(body: (Int, String) -> String) {
   body(10, "hoge")
 }
 
-private fun hoge3(a1: Int, a2: String): String {
-  return a2
+fun add(a1: Int, a2: Int): Int {
+  return a1 + a2
 }
 
 private fun hoge(
