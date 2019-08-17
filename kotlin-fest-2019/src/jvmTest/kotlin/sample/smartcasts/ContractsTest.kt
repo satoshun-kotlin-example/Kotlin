@@ -2,12 +2,35 @@ package sample.smartcasts
 
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
+import kotlin.test.assertTrue
+
+fun test4(strs: List<String>?) {
+//  val strs: List<String>?
+  if (!strs.isNullOrEmpty()) {
+    println(strs.size)
+  }
+}
+
+fun test5(obj: String?) {
+  assertTrue(obj != null)
+  print(obj.length)
+}
+
+fun test6(obj: String?) {
+  val s: String
+  run {
+    s = ""
+  }
+  println(s)
+}
 
 fun test2(obj: Any?) {
   run {
+  }
+
+  run {
     if (checkObj(obj)) {
-      // ここでobjがnullではないことを保証したい
-//      val a: Any = obj
+      obj!!.javaClass
     }
   }
 

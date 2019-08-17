@@ -2,9 +2,9 @@ package sample.smartcasts
 
 fun test3(obj: Any?) {
   run {
-    if (obj is String) {
-      print(obj.length)
-    }
+  }
+  if (obj is String) {
+    print(obj.length)
   }
 
   run {
