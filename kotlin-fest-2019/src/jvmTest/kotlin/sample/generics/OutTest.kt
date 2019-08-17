@@ -5,14 +5,19 @@ import org.junit.Test
 class OutTest {
   @Test
   fun test() {
-    val mapper = Mapper<Number>()
-    val mapping: (String) -> Int = { it.toInt() }
-    mapper.map(mapping)
+    val mapper = IntMapper()
+    hoge(mapper)
   }
 }
 
-class Mapper<T> {
-  fun map(mapping: (String) -> T): T {
-    return mapping("100")
-  }
+interface Mapper<out T> {
+  fun map(s: String): T
+}
+
+class IntMapper : Mapper<Int> {
+  override fun map(s: String): Int = s.toInt()
+}
+
+fun hoge(mapper: Mapper<Number>) {
+  mapper.map("10")
 }
