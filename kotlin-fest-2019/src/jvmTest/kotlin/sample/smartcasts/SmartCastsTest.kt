@@ -16,6 +16,7 @@ fun test3(obj: Any?) {
     when (obj) {
       is Int -> print((obj as Int) + 1)
       is String -> print((obj as String).length + 1)
+      is IntArray -> print((obj as IntArray).sum() + 1)
     }
   }
 

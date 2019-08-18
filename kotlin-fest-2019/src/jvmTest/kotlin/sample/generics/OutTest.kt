@@ -21,3 +21,26 @@ class IntMapper : Mapper<Int> {
 fun hoge(mapper: Mapper<Number>) {
   mapper.map("10")
 }
+
+fun a() {
+  run {
+    class A<out T>
+
+    val a: A<Int> = A<Int>()
+    val b: A<Number> = a
+  }
+
+  run {
+    class A<T>
+
+    val a: A<Int> = A<Int>()
+//    val b: A<Number> = a
+  }
+
+  run {
+    class A<in T>
+
+    val a: A<Number> = A<Number>()
+    val b: A<Int> = a
+  }
+}
