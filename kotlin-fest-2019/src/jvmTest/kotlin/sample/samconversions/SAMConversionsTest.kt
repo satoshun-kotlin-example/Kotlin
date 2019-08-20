@@ -27,14 +27,14 @@ class SAMConversionsTest {
         })
     }
 
-    run {
-      val o1 = Observable.just(1)
-      val o2 = Observable.just(2)
-      val a: Observable<Pair<Int, Int>> = Observable
-        .combineLatest<Int, Int, Pair<Int, Int>>(o1, o2, { n1, n2 ->
-          n1 to n2
-        })
-    }
+//    run {
+//      val o1 = Observable.just(1)
+//      val o2 = Observable.just(2)
+//      val a: Observable<Pair<Int, Int>> = Observable
+//        .combineLatest<Int, Int, Pair<Int, Int>>(o1, o2, { n1, n2 ->
+//          n1 to n2
+//        })
+//    }
   }
 }
 

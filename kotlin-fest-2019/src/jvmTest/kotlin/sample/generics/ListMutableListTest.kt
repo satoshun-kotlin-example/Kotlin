@@ -14,8 +14,10 @@ class ListMutableListTest {
     }
 
     run {
-      //      val strs: MutableList<String> = mutableListOf("a", "b")
+//      val strs: MutableList<String> = mutableListOf("a", "b")
 //      val anys: MutableList<Any> = strs
+//
+//      anys.last()
     }
 
     run {
