@@ -14,10 +14,10 @@ class NothingTest {
 //    }
 //    println(name.length) // Error
 
-    val name = if (user.isFriend()) {
-      user.getName()
+    val name = if (isFriend()) {
+      getName()
     } else {
-      user.fail2()
+      fail()
     }
     println(name.length) // Success
 
@@ -32,17 +32,17 @@ fun hoge() : String = ""
 
 object User
 
-fun User.isFriend(): Boolean = true
+fun isFriend(): Boolean = true
 
-fun User.getName(): String {
+fun getName(): String {
   return "name"
 }
 
-fun User.fail() {
+fun fail2() {
   throw RuntimeException()
 }
 
-fun User.fail2(): Nothing {
+fun fail(): Nothing {
   throw RuntimeException()
 }
 
