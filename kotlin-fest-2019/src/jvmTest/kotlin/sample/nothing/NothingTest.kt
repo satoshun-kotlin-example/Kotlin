@@ -14,21 +14,47 @@ class NothingTest {
 //    }
 //    println(name.length) // Error
 
-    val name = if (isFriend()) {
-      getName()
-    } else {
-      fail()
+    run {
+      val name = if (isFriend()) {
+        getName()
+      } else {
+        fail()
+      }
+      println(name.length)
     }
-    println(name.length) // Success
 
-    val a : Any? = hoge()
-    if (a == null) {
-      NullShow.show(a)
+    run {
+      val name = if (isFriend()) {
+        getName()
+      } else {
+        throw IllegalArgumentException("hoge")
+      }
+      println(name.length)
+    }
+
+    run {
+      val name: Unit = if (isFriend()) {
+        getName2()
+      } else {
+        fail2()
+      }
+      println(name)
+    }
+
+    run {
+      val a: Any? = hoge()
+      if (a == null) {
+        NullShow.show(a)
+      }
+    }
+
+    run {
+      val show: Show<Nothing> = NullShow
     }
   }
 }
 
-fun hoge() : String = ""
+fun hoge(): String = ""
 
 object User
 
@@ -36,6 +62,9 @@ fun isFriend(): Boolean = true
 
 fun getName(): String {
   return "name"
+}
+
+fun getName2() {
 }
 
 fun fail2() {
