@@ -85,3 +85,7 @@ object NullShow : Show<Nothing?> {
   override fun supports(a: Any?): Boolean = a == null
   override fun show(a: Nothing?): String = "<null>"
 }
+
+interface Callable<T> {
+  fun call(): T
+}

@@ -15,3 +15,9 @@ fun test(any: Any): String {
     else -> fail()
   }
 }
+
+fun test2(): Nothing {
+  while (true) {
+    println(".")
+  }
+}
